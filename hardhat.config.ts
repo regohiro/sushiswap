@@ -24,13 +24,13 @@ const accounts = {
 }
 
 const config: HardhatUserConfig = {
-  abiExporter: {
-    path: "./abi",
-    clear: false,
-    flat: true,
-    // only: [],
-    // except: []
-  },
+  // abiExporter: {
+  //   path: "./abi",
+  //   clear: false,
+  //   flat: true,
+  //   // only: [],
+  //   // except: []
+  // },
   defaultNetwork: "hardhat",
   etherscan: {
     apiKey: process.env.ETHERSCAN_API_KEY,
@@ -333,9 +333,9 @@ const config: HardhatUserConfig = {
     sources: "contracts",
     tests: "test",
   },
-  preprocess: {
-    eachLine: removeConsoleLog((bre) => bre.network.name !== "hardhat" && bre.network.name !== "localhost"),
-  },
+  // preprocess: {
+  //   eachLine: removeConsoleLog((bre) => bre.network.name !== "hardhat" && bre.network.name !== "localhost"),
+  // },
   solidity: {
     compilers: [
       {
@@ -361,13 +361,13 @@ const config: HardhatUserConfig = {
     outDir: "types",
     target: "ethers-v5",
   },
-  watcher: {
-    compile: {
-      tasks: ["compile"],
-      files: ["./contracts"],
-      verbose: true,
-    },
-  },
+  // watcher: {
+  //   compile: {
+  //     tasks: ["compile"],
+  //     files: ["./contracts"],
+  //     verbose: true,
+  //   },
+  // },
 }
 
 export default config
